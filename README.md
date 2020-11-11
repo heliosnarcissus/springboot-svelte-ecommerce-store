@@ -45,6 +45,10 @@ All REST API endpoints can be found in the ShoppingRestController.java class of 
     - Fetch current/last user
         ```GET localhost:8085/getLastUser```
         
+### SQL Scripts
+To use the entities in this application, make sure you also create your database tables in MYSQL. Execute the scripts found in:
+  ```/gf-ecommerce-backend/src/main/resources/sqlscripts/```
+        
 ### How to run this repo on your local machine
 ##### Start Front-end
 1. Git clone:
