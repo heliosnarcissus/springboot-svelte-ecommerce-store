@@ -1,0 +1,12 @@
+insert into product(idproduct,product_name,product_price,product_stock)
+values ('1000', 'Zilong','10.00','20'); 
+insert into product(idproduct,product_name,product_price,product_stock)
+values ('1001', 'Fanny','11.00','20');   
+insert into product(idproduct,product_name,product_price,product_stock)
+values ('1002', 'Claude','12.00','20');  
+insert into product(idproduct,product_name,product_price,product_stock)
+values ('1003', 'Harith','13.00','20');  
+insert into product(idproduct,product_name,product_price,product_stock)
+values ('1004', 'Gusion','14.00','20');  
+insert into product(idproduct,product_name,product_price,product_stock)
+values ('1005', 'Alucard','15.00','20');  

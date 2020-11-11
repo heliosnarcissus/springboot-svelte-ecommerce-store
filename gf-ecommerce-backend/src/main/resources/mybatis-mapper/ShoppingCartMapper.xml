@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gofluent.shoppingcart.mybatis.mapper.IMyBatisMapper">
+
+    <resultMap id="ItemsResultMap" 		type="com.gofluent.shoppingcart.model.Item">
+        <id 	column="idproduct" 		property="itemID" />
+        <result column="product_name"	property="itemName" />
+        <result column="product_price" 	property="itemPrice" />
+        <result column="product_stock" 	property="itemStockCount" />
+    </resultMap>
+    
+    <resultMap id="BasketItemsResultMap" type="com.gofluent.shoppingcart.model.BasketItem">
+        <id 	column="basketitemid"	 property="basketItemID" />
+        <result column="itemid" 		 property="itemID" />
+        <result column="basketid" 		 property="basketID" />
+    </resultMap>
+    
+    <resultMap id="ShoppingBasketResultMap" type="com.gofluent.shoppingcart.model.ShoppingBasket">
+        <id 	column="basketid" property="basketID" />
+        <result column="basketholder" property="basketHolder" />
+    </resultMap>
+
+
+	<select id="selectAllItemInCart" resultType="java.lang.String">
+	      	select basketitem.itemid
+			from basketitem
+			left join product on basketitem.itemid = product.idproduct
+			where basketitem.basketid = #{basketID};
+	</select>
+	
+	<select id="selectItemById" resultMap="ItemsResultMap">
+        select * from product where idproduct = #{idproduct}
+	</select>
+    
+
+	 <insert id="insertNewItem" parameterType="com.gofluent.shoppingcart.model.BasketItem" 
+         useGeneratedKeys="true" keyColumn="basketitemid" keyProperty="basketItemID">
+		    insert into basketitem(basketid, itemid)
+										values (#{basketID},#{itemID}) ;
+ 	</insert>
+   
+   <delete id="removeItemById">
+ 		 delete from product where idproduct = #{idproduct}
+	</delete>
+	
+	 <insert id="createNewBasket" parameterType="com.gofluent.shoppingcart.model.ShoppingBasket" 
+         useGeneratedKeys="true" keyColumn="basketid" keyProperty="basketID">
+		     insert into mybasket(basketholder) values (#{basketHolder})
+ 	</insert>
+ 
+ 	<select id="selectLatestUser" resultMap="ShoppingBasketResultMap">
+      	 select * from mybasket ORDER BY basketid DESC LIMIT 1
+	</select>
+	
+	<select id="retrieveItemFromDB" resultMap="ItemsResultMap">
+          	select * from product where idproduct = #{itemId}
+	</select>
+	
+</mapper>        
+ 

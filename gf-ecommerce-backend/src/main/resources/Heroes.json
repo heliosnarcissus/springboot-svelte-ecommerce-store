@@ -1,0 +1,32 @@
+{
+    "1000": {
+        "itemId": "1000",
+		"itemName": "Zilong",
+		"itemPrice": "10.00",
+		"itemStock": "20"
+    },
+    "1001": {
+        "itemId": "1001",
+		"itemName": "Fanny",
+		"itemPrice": "11.00",
+		"itemStock": "20"
+    },
+     "1002": {
+        "itemId": "1002",
+		"itemName": "Claude",
+		"itemPrice": "12.00",
+		"itemStock": "20"
+    },
+     "1003": {
+        "itemId": "1003",
+		"itemName": "Harith",
+		"itemPrice": "13.00",
+		"itemStock": "20"
+    },
+     "1004": {
+        "itemId": "1004",
+		"itemName": "Alucard",
+		"itemPrice": "15.00",
+		"itemStock": "20"
+    }
+}
