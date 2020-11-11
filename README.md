@@ -1,4 +1,4 @@
-# gf-ecommerce-store 
+# springboot-svelte-ecommerce-store
 ### This is a demo of a Java Spring Boot + SvelteJS fullstack e-commerce store with added mobile responsive layout
 ![login page](./public/static/images/login.png)
 ![shop view](./public/static/images/shop.png)
